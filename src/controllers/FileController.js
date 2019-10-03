@@ -17,7 +17,8 @@ class fileController {
 
         req.io.sockets.in(box._id).emit("file", file);
 
-        return res.redirect('..');
+        // return res.redirect('..');
+        return res.json(file);
     }
 }
 
