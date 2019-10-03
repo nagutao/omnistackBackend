@@ -11,6 +11,6 @@ const fileController = require('./controllers/FileController');
 routes.post('/boxes', boxController.store);
 routes.post('/boxes/:id/files', multer(multerConfig).single('file'), fileController.store);
 routes.get('/boxes/:id', boxController.show);
-routes.use('/files', express.static(path.resolve(process.cwd(), 'tmp')));
+routes.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 module.exports = routes;
